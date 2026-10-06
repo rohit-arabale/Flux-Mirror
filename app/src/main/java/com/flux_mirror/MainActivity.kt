@@ -244,8 +244,8 @@ fun LocalCastScreen(
         mutableStateOf(PermissionsHelper.hasAllPermissions(context))
     }
 
-    val permissionsToRequest = remember {
-        PermissionsHelper.getMissingPermissions(context).toTypedArray()
+    val permissionsToRequest = remember(hasPermissions) {
+    PermissionsHelper.getMissingPermissions(context).toTypedArray()
     }
 
     val permissionLauncher = rememberLauncherForActivityResult(
